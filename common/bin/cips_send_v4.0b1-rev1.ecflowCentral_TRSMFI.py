@@ -1288,7 +1288,7 @@ def main(files, mode, args):
       info(_("Sending %s to CIPS only through Transmet")%(file))
 
       info(_("RMDEBUG: originalFile=%s")%(file))
-	## Handle the case of a file with a full path
+      ## Handle the case of a file with a full path
       originalDir = os.path.dirname(file)   
       file = os.path.basename(file)
 	
@@ -1315,7 +1315,12 @@ def main(files, mode, args):
         freeformatFile = generateLrfDBFilename(file, args['lrfdb'], args['lrfdb']['date'])
       else:
         freeformatFile = file
-      
+
+      if originalDir:
+        freeformatFile = originalDir+"/"+freeformatFile
+
+      info(_("RMDEBUG: freeformatFile=%s")%(freeformatFile))      
+
       # Final transmet name
       #####################
       transmetFileName = generateTransmetFilename(transmetHeader, transmetCentre, freeformatFile)

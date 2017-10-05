@@ -44,6 +44,20 @@ esac
 
 }
 
+select_send() {
+if [ "$verbose" == "verbose" ]; then
+	cips_send.py --mode $mode --database $db $OPTS --files $file 
+	result=`echo $?`
+elif [ "$verbose" == "debug" ]; then
+	cips_send.py --mode $mode --database $db $OPTS --files $file --debug
+	result=`echo $?`
+else
+	cips_send.py --mode $mode --database $db $OPTS --files $file &> /dev/null
+	result=`echo $?`
+fi
+
+
+}
 ###########################################################"
 # 		MAIN
 
@@ -51,8 +65,16 @@ esac
 MODES="transmet-header"
 DATABASES="lrfdb"
 
+
+## test
+MODES="cips"
+DATABASES="lrfdb"
+
 MODES="cips_debug cips transmet-header"
 DATABASES="moddb prddb lrfdb"
+
+
+verbose=$1
 
 test_counter=1
 error_counter=0
@@ -65,9 +87,9 @@ for db in $DATABASES; do
 	select_file_and_options $mode $db
 
 	echo "sending for test $test_counter ... mode=$mode; db=$db"	
-
-	cips_send.py --mode $mode --database $db $OPTS --files $file &> /dev/null
-	result=`echo $?`
+	
+        #~~
+        select_send
 
 	echo "test${test_counter} = $result"
 	if [ $result -eq 0 ]; then
