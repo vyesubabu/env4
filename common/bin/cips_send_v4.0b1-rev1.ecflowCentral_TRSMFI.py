@@ -939,6 +939,12 @@ def generateTransmetFilename(header, center, freeformat, date=None):
     todayDate = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
     date = todayDate
   
+  ## Handle the case of a freeformat with a full path
+  originalFreeformat = freeformat
+  basenameFreeformat = os.path.basename(freeformat)
+  originalDir = os.path.dirname(freeformat)    
+  freeformat = basenameFreeformat
+
   # Get filename without any "."
   extension = os.path.splitext(freeformat)[1]
   npoints = freeformat.count('.')
@@ -956,7 +962,12 @@ def generateTransmetFilename(header, center, freeformat, date=None):
   else:
     fileName = "T_"+header+"_C_"+center+"_"+date+"_"+freeformat_all+"_"+pid+".bin"
 
+
+  ## originalDir must be in freeformat 
+  if originalDir:
+    fileName = originalDir+"/"+fileName
 	
+  info(_("RMDEBUG: fileName from generateTransmetFilename=%s")%(fileName))
   
   return fileName
   
@@ -1137,7 +1148,17 @@ def info(err):
 
 
 def makeSymbolicLink(file, newfile):
+
+  ## Handle the case of a file with a full path
+  originalFile = os.path.basename(file)
+  originalDir = os.path.dirname(file)    
+
+  ## must be in transmetFileName 
+  #if originalDir:
+  #  newfile = originalDir+"/"+newfile
+
   debug(_("Linking %s to %s")%(file, newfile))
+
   try:
     os.symlink(file, newfile)
   except Exception, err:
@@ -1180,9 +1201,9 @@ def main(files, mode, args):
     for file in files:
       info(_("Sending %s to Transmet")%(file))
 
-      #file = os.path.basename(file)
-      originalDir = os.path.dirname(file)
-      #os.chdir(dir=
+      originalFile = file
+      originalDir = os.path.dirname(originalFile)
+      file = os.path.basename(file)
 
       # Header from command line
       #################
@@ -1201,15 +1222,26 @@ def main(files, mode, args):
       else:
         freeformatFile = file
 
+      if originalDir:
+        freeformatFile = originalDir+"/"+freeformatFile
+
+      info(_("RMDEBUG: freeformatFile=%s")%(freeformatFile))
+
       # Final transmet name
       #####################
       transmetFilename = generateTransmetFilename(transmetHeader, transmetCenter, freeformatFile, date)
 
       if originalDir:
-          transmetFilename = originalDir +"/" + transmetFilename
+          transmetFilename = transmetFilename
+          #transmetFilename = originalDir +"/" + transmetFilename
       else:
 	  print("Not altering transmetFilename")
       
+
+      print("")
+      print("RMDEBUG: transmetFilename=", transmetFilename)
+      info(_("RMDEBUG: transmetfilename=%s")%(transmetFilename))
+      print("")
       # Send to transmet
       ##################
       returnCode = sendWithTransmet(file, transmetFilename)
@@ -1223,7 +1255,11 @@ def main(files, mode, args):
       info(_("Sending %s to region through Transmet")%(file))
       
       #TODO: explode files in several forecast ranges if needed ??
-      
+
+	## Handle the case of a file with a full path
+      file = os.path.basename(file)
+      originalDir = os.path.dirname(file)     
+
       # Generate header
       #################
       [transmetHeader, transmetCenter, date] = generateTransmetHeaders(file, args['datatype'], args['region'])
@@ -1251,6 +1287,14 @@ def main(files, mode, args):
     for file in files:
       info(_("Sending %s to CIPS only through Transmet")%(file))
 
+      info(_("RMDEBUG: originalFile=%s")%(file))
+	## Handle the case of a file with a full path
+      originalDir = os.path.dirname(file)   
+      file = os.path.basename(file)
+	
+      info(_("RMDEBUG: originalDir=%s")%(originalDir))
+      info(_("RMDEBUG: transformedFile=%s")%(file))
+
       # Generate header
       #################
       if args['database'] in (TRANSMET_HEADERS.keys()):
@@ -1276,6 +1320,7 @@ def main(files, mode, args):
       #####################
       transmetFileName = generateTransmetFilename(transmetHeader, transmetCentre, freeformatFile)
       
+      info(_("RMDEBUG: transmetFileName=%s")%(transmetFileName))
       # Send to transmet
       ##################
       returnCode = sendWithTransmet(file, transmetFileName)

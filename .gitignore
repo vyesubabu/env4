@@ -5,3 +5,14 @@
 *.png
 *.jpg
 *.gif
+*.ppt
+*.doc
+*.grib
+*.grib1
+*.grb1
+*.grb
+*.grb2
+*.grib2
+*.nc
+*.hdf
+*.pdf
