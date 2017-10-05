@@ -1,0 +1,12 @@
+#sacct --format=JobID%12,JobName%45,partition,Start,End,TotalCPU%12,maxvmsize,maxvmsizenode
+
+
+
+#sacct --format=JobID%12,JobName%45,alloccpu,user,partition,TotalCPU%12,maxvmsize,Start,End $*
+sacct --format=JobID%12,JobName%45,alloccpu,user,partition,Elapsed,maxvmsize,Start,End,TotalCPU%12,CpuTime $*
+#
+#
+
+#echo "Biggest jobs:"
+#/common/bin/myacct -a |grep [0-9]*-[0-9]*:[0-9]*
+

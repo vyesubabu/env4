@@ -1,0 +1,210 @@
+
+                   JDiskReport Version 1.3.1
+                         Release Notes
+
+  This maintenance update fixes a bug with recent Java 6 versions,
+  looks slightly better on Vista, and comes with improved support
+  for the Windows application data directory (%APPDATA%).
+  
+  On the Mac the "/Volumes" directory is not excluded by default.
+  Hence, external drives can be scanned without changing the filter.
+  On the other hand, external drives will be scanned and listed,
+  if you scan the root directory "/".
+  
+  Slightly improved dialog design. Fixed duplicate mnemonics, fixed
+  broken radio menu item mnemonics, style guide compliant mnemonics,
+  added a few menu accelerators.
+  
+---------------------------------------------------------------------------
+Find below the change history for older releases.
+
+
+                   JDiskReport Version 1.3.0a
+                         Release Notes
+
+  This maintenance update comes with an improved Windows installer 
+  that fixes a bug with the %APPDATA% handling on popup menu launch.
+  
+---------------------------------------------------------------------------
+Find below the change history for older releases.
+
+                   JDiskReport Version 1.3.0
+                         Release Notes
+
+
+INTRODUCTION
+
+  This maintenance update comes with a slightly polished main window
+  and behaves better on Windows Vista.
+  
+  Previous versions created a folder ".jdiskreport" in the user home
+  directory, which was rarely used by Windows users. On Windows Vista
+  the "Users\<user name>\" directory is visited more frequently, and
+  a ".jdiskreport" directory may annoy users.   
+  The JDiskReport folder is now created under the %APPDATA% directory,
+  if available, otherwise under the user home directory - as before.
+  
+  
+OTHER CHANGES
+
+  o Uses the most recent JGoodies open source libraries.
+  o Moved header label to the frame title prefix.
+  o Removed status bar and some borders.
+  o Larger pie chart.
+  o Runtime resources have been reorganized.
+
+  
+---------------------------------------------------------------------------
+Find below the change history for older releases.
+
+
+                   JDiskReport Version 1.2.6
+                         Release Notes
+
+
+INTRODUCTION
+
+  This maintenance update looks better on Windows Vista.
+  
+  
+OTHER CHANGES
+
+  o Uses the most recent JGoodies open source libraries.
+  o Runtime resources have been reorganized.
+
+  
+---------------------------------------------------------------------------
+Find below the change history for older releases.
+
+
+
+                   JDiskReport Version 1.2.5
+                         Release Notes
+
+
+INTRODUCTION
+
+  This maintenance update fixes a bug and looks better on Windows XP 
+  with the Royale style as well as on the Windows Vista Beta2 builds.
+  
+  
+BUGS FIXED
+
+  o Custom command not stored in the preferences.
+
+
+OTHER CHANGES
+
+  o On the Mac "/volumes" are no longer excluded by default,
+    making it easier to scan external disk drives.
+  o Uses the most recent JGoodies open source libraries.
+
+  
+---------------------------------------------------------------------------
+Find below the change history for older releases.
+
+
+
+                   JDiskReport Version 1.2.4
+                         Release Notes
+
+
+INTRODUCTION
+
+  This maintenance update contains user interface improvements 
+  for Java 5, Java 6, Windows XP, Windows Vista, and Chinese, 
+  Japanese, Korean, and other non-western environments.
+  
+  
+BUGS FIXED
+
+  o Copy to Clipboard erases size units in details table.
+
+
+OTHER CHANGES
+
+  o Uses the most recent JGoodies libraries.
+
+  
+---------------------------------------------------------------------------
+Find below the change history for older releases.
+
+
+                     JDiskReport Version 1.2.3
+                           Release Notes
+
+
+INTRODUCTION
+
+  This update fixes minor bugs and works better with Java 5.
+  
+  
+BUGS FIXED
+
+  o Broken "Back" popup menu.
+  o Broken menus on OS X 10.4 (Tiger).
+
+
+OTHER CHANGES
+
+  o Refreshed libraries.
+  o Improved appearance with Java 5 on Windows.
+  o Corrected copyright in OS X application info.
+  o Significantly shrinked the native installers.
+
+  
+---------------------------------------------------------------------------
+Find below the change history for older releases.
+
+
+
+                     JDiskReport Version 1.2.2
+                           Release Notes
+
+
+INTRODUCTION
+
+  This maintenance update fixes bugs and uses the latest versions
+  of the underlying JGoodies desktop libraries.
+  
+  
+BUGS FIXED
+
+  o Can't filter directory that has no subdirectories.
+  o Can't open a previously saved scan on Mac OS X.
+  o Wrong default directory exclusions on Solaris.
+  o Broken popup menu in size chart on Mac OS X.
+
+
+OTHER CHANGES
+
+  o Refreshed libraries.
+  o Increased maximum Java VM memory on OS X to 256MB.
+  o Prevents a potential runtime error when cancelling a scan.
+
+  
+---------------------------------------------------------------------------
+Find below the change history for older releases.
+
+
+                     JDiskReport Version 1.2.1
+                           Release Notes
+
+
+INTRODUCTION
+
+  This maintenance update comes with minor appearance improvements.
+  
+  
+BUGS FIXED
+
+  o Poor dock icon on OS X.
+  o Windows look&feel toolbar separator missing on 1.4.0 and 1.4.1.
+  o Preferences broken on 1.4.0 and 1.4.1.
+  
+
+OTHER CHANGES
+
+  o Menus have drop shadows on Windows.
+  o Refreshed libraries.
+

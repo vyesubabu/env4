@@ -1,0 +1,56 @@
+#!/bin/bash
+
+function usage() {
+	echo "$0 SWITCHMODE , wih SWITCH MODE = domain (d) or experiment (e)"
+	exit 1	
+}
+function domainswitching() {
+	cexp=`echo $PWD |grep -o d[0-9]*`; 
+	case $cexp in 
+		d12) nexp=`echo $cexp | sed "s:d12:d3:g"`;; 
+		d3) nexp=`echo $cexp | sed "s:d3:d12:g"`;; 
+		*) echo "which exp is this? $cexp"; ;; 
+	esac; 
+	ndir=`echo $PWD|sed "s:$cexp:$nexp:g"`; 
+}
+function experimentswitching() {
+	cexp=`echo $PWD |grep -o REV[0-9]*`; 
+	case $cexp in 
+		REV4) nexp=`echo $cexp | sed "s:REV4:REV3:g"`;; 
+		REV3) nexp=`echo $cexp | sed "s:REV3:REV4:g"`;; 
+		*) echo "which exp is this? $cexp"; ;; 
+	esac; 
+	ndir=`echo $PWD|sed "s:$cexp:$nexp:g"`; 
+}
+SWITCH_TYPE=$1
+
+if [ -z "$SWITCH_TYPE" ]; then
+	usage
+fi
+
+set +x 
+case $SWITCH_TYPE in
+	domain|d) 
+		echo "Switching domains"
+		domainswitching
+		;;
+	experiment|e) 
+		echo "Switching domains"
+		experimentswitching
+		;;
+	*)
+		echo "which switch is this? ";
+		usage
+		;; 
+esac
+
+
+		
+
+	
+
+set +x
+
+echo "Switching from $PWD to $ndir"
+echo "cd $ndir"
+

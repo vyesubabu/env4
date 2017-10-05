@@ -1,0 +1,21 @@
+
+if [ -z "$1" ]; then
+	echo "Please enter a directory full path. eg $PWD"
+	exit
+fi
+
+svn_dirlist=`find $1 -type d|grep "svn$"`
+
+echo "The list of SVN subdirs is: " $svn_dirlist
+
+echo "Do you wish to remove them?? [y/n]"
+read answer
+
+if [ "$answer" == "y" ]; then
+	
+	for d in $svn_dirlist; do
+#		echo "Remove $d" ?
+#		read aa
+		rm -rf $d
+	done
+fi

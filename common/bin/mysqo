@@ -1,0 +1,1 @@
+watch 'squeue -p oper -o"%.7i %.9P %.35j %.8u %.2t %.10M %.8C %.6D %R"' $*  

@@ -1,0 +1,9 @@
+#SECOND=`seq -f %04.f 60 6 72`
+#FIRST=`seq -f %04.f 0 3 54`
+FIRST=`seq -f %04.f00 0 3 54`
+SECOND=`seq -f %04.f00 60 6 72`
+
+NTIMES=`echo $FIRST $SECOND|sed "s: :;:g"`
+
+echo $NTIMES
+
