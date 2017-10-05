@@ -1,0 +1,23 @@
+<!--
+List ModDB run for specific model / grid association
+-->
+<request>
+    <type>getCapabilities</type>
+    <database>moddb</database>
+    <name>listRun</name>
+
+    <format>xml</format>
+
+    <variables>
+        <dateRunBegin>20090815000000</dateRunBegin>
+        <dateRunEnd>20090815235959</dateRunEnd>
+        <model>PGFS</model>
+        <grid>GLOB10</grid>
+
+        <!--
+          Optional variables:
+        -->
+
+    </variables>
+</request>
+

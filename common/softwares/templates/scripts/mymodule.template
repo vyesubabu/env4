@@ -1,0 +1,29 @@
+#%Module1.0#####################################################################
+##
+## mymodule modulefile
+##
+## Copyright (c) 2011 Stanford University.
+## All rights reserved.
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tThis module is your module. Rename it at will"
+}
+
+conflict mymodule
+
+module-whatis   "Provides a working environment for your user on HPC"
+
+setenv 	MYHOME 		$::env{HOME}/
+
+set     version      "3.2.0"
+
+set-alias   lrt      "ls -lrt"
+## Access an env variable through : $::env(DOMAINE_ACTUEL)
+prepend-path PATH 	MYHOME/bin
+
+# Add relevant paths to LD_LIBRARY_PATH
+prepend-path LD_LIBRARY_PATH  MYHOME/lib
+
+
+

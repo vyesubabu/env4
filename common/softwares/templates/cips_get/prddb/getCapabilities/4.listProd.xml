@@ -1,0 +1,20 @@
+<!--
+PrdDB : List products
+-->
+<request> 
+  <type>getCapabilities</type> 
+  <database>prddb</database> 
+  <name>listProd</name>
+
+  <format>xml</format> 
+
+  <variables> 
+    <dateBegin>20090710000000</dateBegin> 
+    <dateEnd>20090715000000</dateEnd> 
+
+    <key1>GFS</key1>
+    <key2>Verification</key2>
+    <key3>VS_ANAL</key3>
+
+  </variables>
+</request>

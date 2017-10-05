@@ -7,6 +7,8 @@
 #   AUTHOR: REMI MONTROTY                                   Jan, 01  2017     #
 #                                                                             #
 #   VERSION :								      #
+#	* v1.0.1: 20171005						      # 
+#		- Add: ecfnode02
 #	* v1.0.0: 20171004						      # 
 #		- Removed slurmdbd.conf from phasing			      #
 #		- Now use test_and_relink.sh on nodes			      #
@@ -81,7 +83,7 @@ esac
 ## Do not send slurmdbd.conf : it belongs on master only
 ClusterFiles="/etc/slurm/slurm.conf /etc/hosts /etc/munge/munge.key"
 
-ClusterNodes="ecfnode01"
+ClusterNodes="ecfnode01 ecfnode02"
 ClusterTarsDir=/root/ClusterTARS
 
 NOW=`date -u +%Y%m%d%H%M` 
@@ -117,6 +119,8 @@ tar cvfz $TARFILE *
 #########################################################
 #exit 0
 for node in $ClusterNodes; do 
+
+	
 
 	#~~ dispatch tar to node
 	dispatch_tar $TARFILE $node	

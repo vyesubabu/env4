@@ -1,0 +1,26 @@
+<request> 
+  <type>getData</type> 
+  <database>moddb</database> 
+  <format>grib</format> 
+
+  <variables> 
+
+    <dateRunPeriod>
+      <begin>__7_DAYS_AGO__</begin>
+      <end>__NOW__</end>
+      <step>__12_HOURS__</step>
+    </dateRunPeriod>
+
+    <model>PGFSUS</model> 
+    <grid>GLOB0500</grid> 
+
+    <level>500HPA</level> 
+    <param>T</param> 
+    <range>24H</range> 
+
+    <!--
+    <subGrid>France</subGrid>
+    -->
+
+  </variables>
+</request>

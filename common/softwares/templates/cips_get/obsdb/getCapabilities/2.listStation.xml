@@ -1,0 +1,23 @@
+<!--
+List stations
+-->
+<request> 
+  <type>getCapabilities</type> 
+  <database>obsdb</database> 
+  <name>listStation</name>
+
+  <format>xml</format> 
+
+  <variables> 
+    <dateRef>20090721000000</dateRef> 
+    <timeDepth>3H</timeDepth> 
+
+    <!--
+      Optional variables
+  
+    <domain>INDIA</domain>
+    -->
+    <obsType>ACAR</obsType>
+    
+  </variables>
+</request>

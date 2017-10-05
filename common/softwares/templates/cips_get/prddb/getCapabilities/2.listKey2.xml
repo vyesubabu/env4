@@ -1,0 +1,21 @@
+<!--
+PrdDB : List key2
+-->
+<request> 
+  <type>getCapabilities</type> 
+  <database>prddb</database> 
+  <name>listKey2</name>
+
+  <format>xml</format> 
+
+  <variables> 
+    <dateBegin>20090601000000</dateBegin> 
+    <dateEnd>20090601000000</dateEnd> 
+
+    <!--
+      Optional variables
+    -->
+    <key1>GFS</key1>
+
+  </variables>
+</request>

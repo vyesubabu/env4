@@ -1,0 +1,139 @@
+Multiple animation generation
+-----------------------------
+
+The goal of this exercise is to generates a script which
+automatically generates animations of:
+
+GFS forecast:
+  - All forecast ranges of the latest GFS run for 
+      Temperature (T) 
+      At 250HPA, 500HPA, 750HPA and 1000HPA
+
+  - All forecast ranges of the latest GFS run for 
+      Humidity (Q) at 2M
+
+  - All forecast ranges of the latest GFS run for
+      Horizontal wind (V)
+      At 250HPA, 500HPA, 750HPA and 1000HPA
+
+Satellite imagery:
+  - Latest 24H of METEOSAT over SPACE-63E for parameters
+      IR_MTL, VS_MTL, CCmed24, CC_CIPS
+
+  - Latest 6H preview of METEOSAT over SPACE-63E for parameter
+      CCmed24
+      Preview area INDIA
+
+  - Latest 6H preview of TOULOUSE radar for parameter
+      RADAR_IO
+
+
+
+All of theses animations has to be :
+  - In a separated folder
+  - Could be launched independently by one command
+
+Example:
+$ cd Animation/GFS.GLOB10.T.250HPA
+$ ./generateAnimation.sh
+[GFS.GLOB10.T.250HPA] Downloading images ...
+[GFS.GLOB10.T.250HPA] Creating animation ...
+
+
+
+The generation of all animations could be launched by one command, example:
+$ cd Animation
+$ ./generateAllAnimations.sh
+=== Creating GFS forecast animation ===
+[GFS.GLOB10.T.250HPA] Downloading images ...
+[GFS.GLOB10.T.250HPA] Creating animation ...
+[GFS.GLOB10.T.500HPA] Downloading images ...
+[GFS.GLOB10.T.500HPA] Creating animation ...
+[GFS.GLOB10.T.750HPA] Downloading images ...
+[GFS.GLOB10.T.750HPA] Creating animation ...
+[GFS.GLOB10.T.1000HPA] Downloading images ...
+[GFS.GLOB10.T.1000HPA] Creating animation ...
+etc ...
+
+=== Creating satellite animation ===
+[METEOSAT.SPACE-63E.IR_MTL] Downloading images ...
+[METEOSAT.SPACE-63E.IR_MTL] Creating animation ...
+[METEOSAT.SPACE-63E.VS_MTL] Downloading images ...
+[METEOSAT.SPACE-63E.VS_MTL] Creating animation ...
+etc ...
+
+
+
+------------------------------------------------------
+------------------------------------------------------
+GFS forecast:
+  - All forecast ranges of the latest GFS run for
+      Temperature (T)
+      At 250HPA, 500HPA, 750HPA and 1000HPA
+
+      Directory: 	Animation/GFS.GLOB10.T.250HPA/
+      Animation file:	GFS.GLOB10.T.250HPA.gif
+
+      Directory: 	Animation/GFS.GLOB10.T.500HPA/
+      Animation file:	GFS.GLOB10.T.500HPA.gif
+
+      Directory: 	Animation/GFS.GLOB10.T.750HPA/
+      Animation file:	GFS.GLOB10.T.750HPA.gif
+
+      Directory: 	Animation/GFS.GLOB10.T.1000HPA/
+      Animation file:	GFS.GLOB10.T.1000HPA.gif
+
+
+  - All forecast ranges of the latest GFS run for
+      Humidity (Q) at 2M
+
+      Directory: 	Animation/GFS.GLOB10.Q.2M/
+      Animation file:	GFS.GLOB10.Q.2M.gif
+
+
+  - All forecast ranges of the latest GFS run for
+      Horizontal wind (V)
+      At 250HPA, 500HPA, 750HPA and 1000HPA
+
+      Directory: 	Animation/GFS.GLOB10.V.250HPA
+      Animation file:	GFS.GLOB10.V.250HPA.gif
+
+      Directory: 	Animation/GFS.GLOB10.V.500HPA
+      Animation file:	GFS.GLOB10.V.500HPA.gif
+
+      Directory: 	Animation/GFS.GLOB10.V.750HPA
+      Animation file:	GFS.GLOB10.V.750HPA.gif
+
+      Directory: 	Animation/GFS.GLOB10.V.1000HPA
+      Animation file:	GFS.GLOB10.V.1000HPA.gif
+
+
+Satellite imagery:
+  - Latest 24H of METEOSAT over SPACE-63E for parameters
+      IR_MTL, VS_MTL, CCmed24, CC_CIPS
+
+      Directory:	Animation/METEOSAT.SPACE-63E.IR_MTL
+      Animation file:   METEOSAT.SPACE-63E.IR_MTL
+
+      Directory:	Animation/METEOSAT.SPACE-63E.VS_MTL
+      Animation file:   METEOSAT.SPACE-63E.VS_MTL
+
+      Directory:	Animation/METEOSAT.SPACE-63E.CCmed24
+      Animation file:   METEOSAT.SPACE-63E.CCmed24
+
+
+  - Latest 6H preview of METEOSAT over SPACE-63E for parameter
+      CCmed24
+      Preview area INDIA
+
+      Directory:	Animation/METEOSAT.SPACE-63E.CCmed24.INDIA
+      Animation file:   METEOSAT.SPACE-63E.CCmed24.INDIA.gif
+
+
+
+  - Latest 6H preview of TOULOUSE radar for parameter
+      RADAR_IO
+
+      Directory: 	Animation/TOULOUSE.RADAR_IO
+      Animation file:	TOULOUSE.RADAR_IO.gif
+

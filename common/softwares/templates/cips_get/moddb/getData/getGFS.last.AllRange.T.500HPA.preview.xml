@@ -1,0 +1,23 @@
+<request> 
+  <type>getData</type> 
+  <database>moddb</database> 
+
+  <format>png</format> 
+
+  <variables> 
+
+    <dateRun>__LATEST__</dateRun>
+
+    <model>PGFS</model> 
+    <grid>GLOB10</grid> 
+
+    <level>500HPA</level> 
+    <param>T</param> 
+    <range>ALL</range> 
+
+    <!--
+    <previewArea>France</previewArea>
+    -->
+
+  </variables>
+</request>

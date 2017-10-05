@@ -1,0 +1,27 @@
+<!--
+ObsDB get data
+-->
+<request> 
+  <type>getData</type> 
+  <database>obsdb</database> 
+
+  <!--
+    Format could be 
+      - rdb     Synergie raw format
+      - csv     CSV text output
+      - bufr    Bufr binary format
+      - png     PNG image output of preview
+    -->
+  <format>png</format> 
+
+  <variables> 
+
+    <dateRef>__CURRENT_QUARTERHOUR__</dateRef> 
+    <timeDepth>3H</timeDepth> 
+
+    <obsType>SYNOP</obsType>
+
+    <domain>France</domain>
+
+  </variables>
+</request>

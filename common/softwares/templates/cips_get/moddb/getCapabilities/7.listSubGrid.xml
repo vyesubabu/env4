@@ -1,0 +1,12 @@
+<!--
+List ModDB parameters for specific model / grid / date of run association
+-->
+<request>
+    <type>getCapabilities</type>
+    <database>moddb</database>
+    <name>listSubGrid</name>
+
+    <format>xml</format>
+
+</request>
+

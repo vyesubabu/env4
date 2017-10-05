@@ -1,0 +1,125 @@
+<magics version='3.0'>
+
+  <!-- Some definition, that will be used later in the document -->
+  <definition>
+
+    <!-- ************************** -->
+    <!-- ********* Legend ********* -->
+
+    <!-- For a column bar legend, (TO BE IMPROVED) -->
+    <legend id='legend_column' 
+            height='80%' width='10%' 
+            display='absolute' left='90%' bottom='10%' 
+            border='off'
+            entry_plot_direction='column'>
+      <continuous/>
+    </legend> 
+
+    <!-- For a row bar legend -->
+    <legend id='legend_bar' 
+            display='block' height='5%'
+            border='off'>
+      <continuous/>
+    </legend> 
+
+    <legend id='legend_default'
+           border='off' box_mode='automatic'>
+    </legend> 
+
+    <!-- ********* /Legend ********* -->
+    <!-- ************************** -->
+
+
+    <!-- *********************************** -->
+    <!-- ********* Contour methods ********* -->
+
+    <!-- Basic shading -->
+    <contour id='contour_shading'
+              contour_shade_method='area_fill'
+              contour_hilo='off'
+              > 
+      <isoline 
+        thickness='5'
+        style='dash'>
+
+        <shading>
+          <polygon>
+            <area_fill/>
+          </polygon>
+
+          <calculate 
+            max_level_colour = 'orange'
+            min_level_colour = 'purple'
+            colour_direction = 'clockwise'/>
+        </shading>
+      </isoline>
+    </contour>   
+
+
+
+
+    <!-- Basic isoline -->
+    <contour id='contour_isoline'>
+      <isoline line_thickness = '1' style = 'dash'>
+        <interval interval = '8.0' />
+      </isoline>
+
+      <nohilo/>
+    </contour>
+
+    <!-- *********************************** -->
+    <!-- *********/Contour methods ********* -->
+
+
+    <!-- ******************************* -->
+    <!-- ********* Coast lines ********* -->
+    <coastlines id = 'coastlines_shaded'>
+      <coast colour = 'tan'>
+        <landshading colour = 'cream'/>
+      </coast>
+    </coastlines>
+
+
+    <coastlines id='coastlines_default'>
+      <coast colour = 'black' >       
+      </coast>
+      <grid colour = 'grey' line_style='dot' >
+      </grid>
+    </coastlines>
+
+    <!-- ******************************* -->
+    <!-- *********/Coast lines ********* -->
+
+  </definition>
+
+
+
+
+
+
+<!-- ******************************* -->
+<!-- ********* Render prod ********* -->
+  <drivers>
+    <png name= '${title=preview}' width='${width=1024}' />
+<!-- <svg name= '${title=preview}' /> -->
+  </drivers>
+
+
+  <page scene_node_id_line='off'>
+     
+     <map> 
+
+      <cylindrical />
+
+      <plot>
+          <grib input_file_name='${inputFile=gfs.grib}'/>
+          <contour use_id='contour_isoline'/>
+      </plot>
+        
+      <coastlines use_id='coastlines_default'/>
+      
+     </map> 
+
+  </page>   
+
+</magics> 

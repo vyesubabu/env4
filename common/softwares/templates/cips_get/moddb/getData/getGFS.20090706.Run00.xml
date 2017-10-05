@@ -1,0 +1,18 @@
+<request> 
+  <type>getData</type> 
+  <database>moddb</database> 
+  <format>grib</format> 
+
+  <variables> 
+
+    <dateRun>20090706000000</dateRun> 
+
+    <model>PGFS</model> 
+    <grid>GLOB10</grid> 
+
+    <level>ALL</level> 
+    <param>ALL</param> 
+    <range>ALL</range> 
+
+  </variables>
+</request>

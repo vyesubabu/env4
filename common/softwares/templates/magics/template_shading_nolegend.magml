@@ -1,0 +1,160 @@
+<magics version='3.0' width='29.7' height='15'>
+
+  <!-- Some definition, that will be used later in the document -->
+  <definition>
+
+    <!-- ************************** -->
+    <!-- ********* Legend ********* -->
+
+    <!-- For a column bar legend, (TO BE IMPROVED) -->
+    <legend id='legend_column' 
+            height='80%' width='10%' 
+            display='absolute' left='90%' bottom='10%' 
+            border='off'
+            entry_plot_direction='column'>
+      <continuous/>
+    </legend> 
+
+    <!-- For a row bar legend -->
+    <legend id='legend_bar' 
+            display='block' height='5%'
+            border='off'>
+      <continuous/>
+    </legend> 
+
+    <legend id='legend_default'
+           border='off' box_mode='automatic'>
+    </legend> 
+
+    <!-- ********* /Legend ********* -->
+    <!-- ************************** -->
+
+
+    <!-- *********************************** -->
+    <!-- ********* Contour methods ********* -->
+
+    <!-- Basic shading -->
+    <contour id='contour_shading'
+              contour_shade_method='area_fill'
+              contour_hilo='off'
+              > 
+
+      <isoline 
+        thickness='5'
+        style='dash'>
+
+        <shading>
+          <polygon>
+            <area_fill/>
+          </polygon>
+
+          <calculate 
+            max_level_colour = 'orange'
+            min_level_colour = 'purple'
+            colour_direction = 'clockwise'/>
+        </shading>
+      </isoline>
+    </contour>   
+    <!-- *********************************** -->
+    <!-- *********/Contour methods ********* -->
+
+
+    <!-- ******************************* -->
+    <!-- ********* Coast lines ********* -->
+    <coastlines id = 'coastlines_shaded'>
+      <coast colour = 'tan'>
+        <landshading colour = 'cream'/>
+      </coast>
+    </coastlines>
+
+
+    <coastlines id='coastlines_default'>
+      <coast colour = 'black' >       
+      </coast>
+      <grid colour = 'grey' line_style='dot' >
+      </grid>
+    </coastlines>
+
+    <!-- ******************************* -->
+    <!-- *********/Coast lines ********* -->
+
+
+
+    <cylindrical id='projection_europe'
+                     lower_left_longitude = '${west=-15}'
+                     lower_left_latitude  = '${north=30}'
+                     upper_right_longitude = '${east=40}'
+                     upper_right_latitude  = '${south=70}' /> 
+
+  </definition>
+
+  <drivers>
+    <png name= '${title=preview}' width='${width=1024}' />
+<!-- <svg name= '${title=preview}' /> -->
+  </drivers>
+
+
+
+  <!-- **************************************** -->
+  <!-- ********* Template with legend ********* -->
+
+<!--
+  <page id='page_with_legend'
+    scene_node_id_line='off'>
+     
+     <map 
+        display='absolute'
+        margin_right='15%'
+        margin_top='25%'>
+
+      <text  height='10%' display='block' > z500 <magics_title/> </text>    
+      
+      <cylindrical />
+
+      <plot>
+          <grib input_file_name='${inputFile=gfs.grib}'/>
+          <contour use_id='contour_shading'/>
+      </plot>
+        
+      <coastlines use_id='coastlines_default'/>
+      
+     </map> 
+
+     <legend use_id='legend_column'/>
+
+  </page>   
+-->
+
+<!-- *********/Template with legend ********* -->
+<!-- **************************************** -->
+
+<!-- ******************************************** -->
+<!-- ********* Template with image only ********* -->
+  <page id='page_image_only'
+        scene_node_id_line='off'>
+     <map
+        margin_bottom='0%'
+        margin_top='0%'
+        margin_left='0%'
+        margin_right='0%'
+        >
+
+      <cylindrical />
+
+      <plot>
+          <grib input_file_name='${inputFile=gfs.grib}'/>
+          <contour use_id='contour_shading'/>
+      </plot>
+        
+      <coastlines use_id='coastlines_default'>
+        <nolabel/>
+      </coastlines>
+      
+     </map> 
+  </page>   
+<!-- *********/Template with image only ********* -->
+<!-- ******************************************** -->
+
+
+
+</magics> 

@@ -1,0 +1,51 @@
+<!--
+ImgDB get data
+-->
+<request>
+    <type>getData</type>
+    <database>imgdb</database>
+
+    <!--
+    Format could be 
+      - tiff    GeoTiff format stored in CIPS
+      - png     PNG image output of preview
+    -->
+    <format>tiff</format>
+
+    <variables>
+      <!--
+      Note that for every variables below, you could specify a list
+
+      Example, if you want several timestamp: 
+        <timeStampList>
+          <timeStamp>20090723140000</timeStamp>
+          <timeStamp>20090723150000</timeStamp>
+          <timeStamp>20090723160000</timeStamp>
+        </timeStampList>
+
+      Or if you want several parameter:
+      <paramList>
+        <param>IR108</param>
+        <param>CCG</param>
+      </paramList>
+      -->
+
+      <product>METEOSAT</product>
+      <domain>ATL-EUROPE</domain>
+      <param>IR108</param>
+      <timeStamp>20090723160000</timeStamp>
+
+
+
+      <!--
+      Optional variables:
+
+      When format is png (preview), you could specify the preview area:
+
+      <previewArea>France</previewArea>
+
+      -->
+
+    </variables>
+</request>
+

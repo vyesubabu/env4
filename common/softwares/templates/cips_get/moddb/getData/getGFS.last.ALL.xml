@@ -1,0 +1,23 @@
+<request> 
+  <type>getData</type> 
+  <database>moddb</database> 
+
+  <format>grib</format> 
+
+  <variables> 
+
+    <dateRun>__LATEST__</dateRun>
+
+    <model>PGFSUS</model> 
+    <grid>GLOB0500</grid> 
+
+    <level>ALL</level> 
+    <param>ALL</param> 
+    <range>ALL</range> 
+
+    <!--
+    <previewArea>France</previewArea>
+    -->
+
+  </variables>
+</request>

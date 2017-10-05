@@ -1,0 +1,40 @@
+Instructions to create an animation
+----------------------------------
+
+#
+# 1. Create a directory
+#
+mkdir Animation_1
+cd Animation_1
+
+#
+# 2. Edit it and put it your xml request file
+#
+# Your request file need to generate
+#   - several png files, possible for all databases
+#   - several tiff files, possible for ImgDB database only
+#
+gedit get.animation_1.xml
+
+#
+# 3. Execute the request
+#
+cips_get.py -i get.animation_1.xml
+
+#
+# (3bis. Check you have some images files)
+#
+ls -lh *.tiff *.png
+
+#
+# 4. Create the animations
+#
+# (Use *.png instead of *.tiff if you generate preview)
+#
+convert -delay 50 -loop 0 -geometry 800x800 *.tiff animation_1.gif
+
+#
+# 5. View the animation
+# 
+animate animation_1.gif
+firefox animation_1.gif

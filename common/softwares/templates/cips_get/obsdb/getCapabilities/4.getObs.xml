@@ -1,0 +1,35 @@
+<!--
+ObsDB get data
+-->
+<request> 
+  <type>getData</type> 
+  <database>obsdb</database> 
+
+  <!--
+    Format could be 
+      - rdb     Synergie raw format
+      - csv     CSV text output
+      - bufr    Bufr binary format
+      - png     PNG image output of preview
+    -->
+  <format>png</format> 
+
+  <variables> 
+
+    <dateRef>20090721000000</dateRef> 
+    <timeDepth>3H</timeDepth> 
+
+    <obsType>SYNOP</obsType>
+
+    <!--
+    Optional variables:
+
+    <domain>France</domain>
+
+    When format is png (preview), you could specify the preview area:
+    <previewArea>France</previewArea>
+
+    -->
+
+  </variables>
+</request>

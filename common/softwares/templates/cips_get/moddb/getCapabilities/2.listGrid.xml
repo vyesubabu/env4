@@ -1,0 +1,24 @@
+<!--
+List ModDB grid
+-->
+<request>
+    <type>getCapabilities</type>
+    <database>moddb</database>
+    <name>listGrid</name>
+
+    <format>xml</format>
+
+    <variables>
+        <dateRunBegin>20090815000000</dateRunBegin>
+        <dateRunEnd>20090815235959</dateRunEnd>
+
+        <!--
+          Optional variables:
+
+        <dateRun>20090608000000</dateRun>
+        <model>PGFS</model>
+        -->
+
+    </variables>
+</request>
+

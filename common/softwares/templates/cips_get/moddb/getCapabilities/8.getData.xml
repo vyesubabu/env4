@@ -1,0 +1,64 @@
+<!--
+Get ModDB data
+-->
+<request> 
+  <type>getData</type> 
+  <database>moddb</database> 
+
+  <!--
+    For could be 
+    - grib    Grib format
+    - csv     CSV text
+    - png     PNG image output of preview
+  -->
+  <format>grib</format> 
+
+  <variables> 
+    
+    <!--
+    Note that for every variables below, you could specify a list
+
+    Example, if you want several run of a model:
+    <dateRunList>
+      <dateRun>20090719000000</dateRun>
+      <dateRun>20090720000000</dateRun>
+      <dateRun>20090721000000</dateRun>
+      <dateRun>20090722000000</dateRun>
+    </dateRunList>
+    -->
+
+    <dateRun>20090721000000</dateRun> 
+    <model>PGFS</model> 
+    <grid>GLOB10</grid> 
+
+
+
+    <!--
+    For level, parameters and range, you could use 'ALL' keyword
+    to download them all
+    -->
+    <level>ALL</level> 
+
+    <param>T</param> 
+
+    <rangeList>
+      <range>24H</range> 
+      <range>48H</range> 
+    </rangeList>
+
+
+    <!--
+    Optional variables:
+
+    <subGrid>41000x-7000,52000x12000</subGrid>
+    or 
+    <subGrid>India</subGrid>
+
+
+    When format is png (preview), you could specify the preview area
+
+    <previewArea>France</previewArea>
+    -->
+
+  </variables>
+</request>

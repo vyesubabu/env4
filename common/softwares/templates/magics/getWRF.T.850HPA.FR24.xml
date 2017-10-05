@@ -1,0 +1,14 @@
+<request> 
+  <type>getData</type> 
+  <database>moddb</database> 
+  <format>grib</format> 
+  <variables> 
+    <dateRun>__LATEST__</dateRun> 
+    <model>PWRF</model> 
+    <grid>CHINA01</grid> 
+    <level>850HPA</level> 
+    <param>T</param> 
+    <range>24H</range> 
+  </variables>
+</request>
+

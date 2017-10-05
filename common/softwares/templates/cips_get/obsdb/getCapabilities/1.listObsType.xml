@@ -1,0 +1,22 @@
+<!--
+List observation types
+-->
+<request> 
+  <type>getCapabilities</type> 
+  <database>obsdb</database> 
+  <name>listObsType</name>
+
+  <format>xml</format> 
+
+  <variables> 
+    <dateRef>20090721000000</dateRef> 
+    <timeDepth>3H</timeDepth> 
+
+    <!--
+      Optional variables
+  
+    <domain>INDIA</domain>
+    -->
+
+  </variables>
+</request>

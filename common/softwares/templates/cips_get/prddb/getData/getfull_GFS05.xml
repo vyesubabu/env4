@@ -1,0 +1,15 @@
+<!-- Request to download product from PrdDB -->
+<request>
+  <type>getData</type>
+  <database>prddb</database>
+
+  <format>tar</format>
+  GFS.Run00.GLOB05
+  <variables>
+     <date>20090807</date>
+     <key1>GFS</key1>
+     <key2>Run00</key2>
+     <key3>GLOB05</key3>
+  </variables>
+</request>
+

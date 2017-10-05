@@ -1,0 +1,23 @@
+<!--
+List ImgDB parameters for a specific product / domain
+-->
+<request>
+    <type>getCapabilities</type>
+    <database>imgdb</database>
+    <name>listParam</name>
+
+    <format>xml</format>
+
+    <variables>
+        <dateBegin>20090801000000</dateBegin>
+        <dateEnd>20090805000000</dateEnd>
+
+        <!--
+          Optional variables
+        -->
+        <product>METEOSAT</product>
+        <domain>ATL-EUROPE</domain>
+        
+    </variables>
+</request>
+

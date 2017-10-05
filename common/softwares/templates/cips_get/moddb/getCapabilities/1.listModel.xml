@@ -1,0 +1,24 @@
+<!--
+List ModDB model
+-->
+<request>
+    <type>getCapabilities</type>
+    <database>moddb</database>
+    <name>listModel</name>
+
+    <format>xml</format>
+
+    <variables>
+        <dateRunBegin>20170923000000</dateRunBegin>
+        <dateRunEnd>20170926000000</dateRunEnd>
+
+        <!--
+          Optional variables:
+
+        <dateRun>20090608000000</dateRun>
+        <grid>GLOB10</grid>
+        -->
+
+    </variables>
+</request>
+

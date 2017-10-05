@@ -1,0 +1,25 @@
+<!--
+Download infra-red satellite image over Europe
+for the last 2 hours every 15 minutes
+-->
+<request> 
+  <type>getData</type> 
+  <database>imgdb</database> 
+  <format>tiff</format> 
+  <variables> 
+
+    <timeStampPeriod>
+      <begin>__2_HOURS_AGO__</begin>
+      <end>__NOW__</end>
+      <step>__15_MINUTES__</step>
+    </timeStampPeriod>
+
+    <product>METEOSAT</product>
+    <domain>ATL-EUROPE</domain>
+    <param>IR108</param>
+
+    <!--
+    <previewArea>TOULOUSE</previewArea>
+    -->
+    </variables>
+</request>

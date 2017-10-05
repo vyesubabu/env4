@@ -1,0 +1,17 @@
+<!-- Request to download product from PrdDB -->
+<request>
+  <type>getData</type>
+  <database>prddb</database>
+
+  <format>tar</format>
+  <variables>
+     <date>20090807</date>
+     <key1>GFS</key1>
+     <key2>Run00</key2>
+     <key3>GLOB05</key3>
+<!-- filter is used to do "ls *filter*" -->
+<!-- here it will only select the first 4 FR: f00,f03,f06,f09 -->
+     <filter>f0</filter>
+  </variables>
+</request>
+

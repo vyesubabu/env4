@@ -1,0 +1,16 @@
+<!--
+PrdDB : Get specific product
+-->
+<request> 
+  <type>getData</type> 
+  <database>prddb</database> 
+
+  <format>tar</format> 
+
+  <variables> 
+    <date>20090601000000</date> 
+    <key1>GFS</key1>
+    <key2>Verification</key2>
+    <key3>VS_ANAL</key3>
+  </variables>
+</request>

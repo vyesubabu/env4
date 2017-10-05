@@ -1,0 +1,184 @@
+<magics version='3.0'>
+
+  <!-- Some definition, that will be used later in the document -->
+  <definition>
+
+    <!-- ************************** -->
+    <!-- ********* Legend ********* -->
+
+    <!-- For a column bar legend, (TO BE IMPROVED) -->
+    <legend id='legend_column' 
+            height='80%' width='10%' 
+            display='absolute' left='90%' bottom='10%' 
+            border='off'
+            entry_plot_direction='column'>
+      <continuous/>
+    </legend> 
+
+    <!-- For a row bar legend -->
+    <legend id='legend_bar' 
+            display='block' height='5%'
+            border='off'>
+      <continuous/>
+    </legend> 
+
+    <legend id='legend_default'
+           border='off' box_mode='automatic'>
+    </legend> 
+
+    <!-- ********* /Legend ********* -->
+    <!-- ************************** -->
+
+
+    <!-- *********************************** -->
+    <!-- ********* Contour methods ********* -->
+
+      <!-- INTERVAL2 CONTOUR -->
+    <contour id='INTERVAL2'
+              contour_shade_method='area_fill'
+              contour_hilo='off' > 
+      <isoline 
+            thickness='5'
+            style='dash'>
+            <interval interval = '__INTERVAL__'
+              contour_min_level = '0.0' />
+
+            <shading>
+                <polygon>
+                    <area_fill/>
+                </polygon>
+                <calculate 
+                    max_level_colour = 'red'
+                    min_level_colour = 'blue_green'
+                    colour_direction = 'clockwise'/>
+            </shading>
+      </isoline>
+    </contour>   
+
+      <!-- INTERVAL2_NOSHADING CONTOUR -->
+    <contour id='INTERVAL2_NOSHADING'
+              contour_shade_method='area_fill'
+              contour_hilo='off' > 
+      <isoline 
+            thickness='5'
+            style='dash'>
+            <interval interval = '10.0'
+              contour_min_level = '-100.0' />
+
+            <noshading />
+            <nolabel />
+      </isoline>
+    </contour>   
+
+
+    <!-- TEMPE 850 CONTOUR -->
+    <contour id='tempe_850'
+              contour_shade_method='area_fill'
+              contour_hilo='off' > 
+       <isoline 
+          thickness='5'
+          style='dash'>
+          <list 
+		          level_list	=	'273/275/279/283/287/291/295' />
+          <shading>
+              <list
+                colour_list = 'blue_green/green/greenish_yellow/yellow/orange_yellow/orange' />
+          </shading>
+          <!-- <nolabel /> -->
+      </isoline>
+    </contour>   
+
+
+
+    <!-- Basic isoline -->
+    <contour id='contour_isoline'>
+      <isoline line_thickness = '1' style = 'dash'>
+        <interval interval = '2.0' />
+      </isoline>
+
+      <nohilo/>
+    </contour>
+
+
+
+    <!-- Dot shading -->
+    <contour id='contour_shading_dot' 
+               contour_shade_method='dot'
+               legend='on'>
+      <isoline>
+        <shading >
+          <calculate 
+            max_level_colour = 'orange'
+            min_level_colour = 'purple'
+            colour_direction = 'clockwise'/>
+        </shading>
+      </isoline>
+
+      <nohilo/>
+    </contour>
+
+    <!-- *********************************** -->
+    <!-- *********/Contour methods ********* -->
+
+
+    <!-- ******************************* -->
+    <!-- ********* Coast lines ********* -->
+    <coastlines id = 'coastlines_shaded'>
+      <coast colour = 'tan'
+              resolution = 'HIGH'>
+        <landshading colour = 'cream'/>
+      </coast>
+    </coastlines>
+
+
+    <coastlines id='coastlines_default'>
+      <coast colour = 'black'
+              resolution = 'HIGH' >       
+
+
+      </coast>
+      <grid colour = 'grey' line_style='dot' >
+      </grid>
+    </coastlines>
+
+    <!-- ******************************* -->
+    <!-- *********/Coast lines ********* -->
+
+  </definition>
+
+
+
+
+
+
+<!-- ******************************* -->
+<!-- ********* Render prod ********* -->
+  <drivers>
+    <ps name= '${title=preview}' width='${width=1024}' />
+    <svg name= '${title=preview}' />
+  </drivers>
+
+
+  <page scene_node_id_line='off'>
+     
+     <map> 
+
+    <cylindrical subpage_lower_left_latitude = '__SOUTH__'
+                 subpage_lower_left_longitude = '__EAST__'
+                 subpage_upper_right_latitude = '__NORTH__'
+                 subpage_upper_right_longitude = '__WEST__' />
+
+      <plot>
+          <grib input_file_name="__FILE__"/>
+          <!-- contour use_id='tempe_850'/-->
+          <contour use_id='INTERVAL2' />
+
+      </plot>
+        
+      <coastlines use_id='coastlines_default'/>
+      
+     </map> 
+
+  </page>   
+
+</magics> 

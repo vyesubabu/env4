@@ -1,0 +1,24 @@
+<!--
+List ImgDB time stamp for a specific product / domain / param
+-->
+<request>
+    <type>getCapabilities</type>
+    <database>imgdb</database>
+    <name>listTimeStamp</name>
+
+    <format>xml</format>
+
+    <variables>
+        <dateBegin>20090805100000</dateBegin>
+        <dateEnd>20090805120000</dateEnd>
+
+        <!-- 
+          At least on of these query is required :
+        -->
+        <product>METEOSAT</product>
+        <domain>ATL-EUROPE</domain>
+        <param>IR108</param>
+        
+    </variables>
+</request>
+

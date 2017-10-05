@@ -1,0 +1,18 @@
+<request> 
+  <type>getData</type> 
+  <database>moddb</database> 
+  <format>grib</format> 
+  <variables> 
+    <dateRun>__LATEST__</dateRun> 
+    <model>PGFS</model> 
+    <grid>GLOB10</grid> 
+    <level>GRND</level> 
+    <param>T</param> 
+    <range>3H</range> 
+<!--
+    <subGrid>France</subGrid>
+    <subGrid>41000x-7000,52000x12000</subGrid>
+-->
+  </variables>
+</request>
+

@@ -1,0 +1,8 @@
+<request> 
+  <type>getCapabilities</type> 
+  <database>obsdb</database> 
+  <name>listDomain</name>
+
+  <format>xml</format> 
+
+</request>
