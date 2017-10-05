@@ -1,0 +1,15 @@
+case $1 in
+	d)
+	du -sh * |sort -h
+	;;
+	f)
+	find . -type f -ls | sort  -n -k7|awk '{print $7" "$11$12$13$14$15$16$17$18$19$20}'
+	;;
+	*)	
+	echo "Usage: $0 d  for size of dirs"
+	echo "       $0 f  for size of files"
+	exit 1
+	;;
+esac
+
+
