@@ -1,0 +1,9 @@
+#squeue -o"%.7i %.9P %.35j %.8u %.2t %.10M %.8C %.6D %R"' $*
+export MODULEPATH=/cm/shared/modulefiles:$MODULEPATH
+module load slurm/14.03.0
+NCPUS=32
+ARGS="$*"
+squeue -o" %.8u %.2t %.8C"|grep " R "|awk '{ sum += $3 } END { print NR" jobs, " sum " CPUs/'$NCPUS'"}'; \
+
+watch ' squeue -o"%.7i %.9P %.35j %.8u %.2t %.10M %.8C %.6D %R" '$ARGS'' 
+
