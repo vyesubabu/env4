@@ -2,12 +2,16 @@
 
 # Name: cips_send.py
 # Property: Meteo France International (M.F.I.)
-# Author: S. BENCHIMOL
-# Release: 3.2b3
+# Author: S. BENCHIMOL / R. MONTROTY
+# Release: 4.0b1
 # Status: Beta (Development)
 # Creation Date: 2009/07/29
 #
 # Current Version: 
+## v4.0b1-rev1 :Modification Date: 2017/10/05 by RM : 
+#		- update of config file for ecFlow-Central
+#		- update location of cips_send.log
+#		- update location of ncftpput
 ## v3.3b2-rev4 :Modification Date: 2017/01/18 by RM : 
 #		- update of config file for miniHPC Botswana
 #		- TODO: LOG of cips_send to be put in config
@@ -130,14 +134,14 @@ TRANSMET_PATH  = getConfig(Config, 'Transmet', 'TRANSMET_PATH')
 
 
 #[Local]
-LOG_FILE = "/cm/shared/client_config/v3.3/apps/CIPS/logs/cips_send/cips_send.log"
+LOG_FILE = "/ecfshared/v4.0/LOGS/Tools/cips_send/cips_send.log"
 LogDir = os.path.dirname(LOG_FILE)
 if not os.path.exists(LogDir):
    os.makedirs(LogDir)
 else:
    print "Path %s exists! Proceeding..." % LogDir
 
-FTP_COMMAND="/common/softwares/ncftp-3.2.5/bin/ncftpput"
+FTP_COMMAND="/ecfshared/v4.0/common/softwares/ncftp-3.2.5/bin/ncftpput"
 #FTP_ARGS = "-S .tmp -r 3"
 FTP_ARGS = "-S .tmp "
 #WGRIB_COMMAND=os.path.expanduser('~')+"/cips/bin/wgrib"
