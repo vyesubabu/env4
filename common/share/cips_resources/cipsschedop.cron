@@ -1,0 +1,4 @@
+#-----------------------------------------------
+# Log Rotation 
+#-----------------------------------------------
+58 23 * * * $COMMON_HOME/bin/taskcentre_logrotate.sh $SHARED_HOME/journal/sms/logs 7
