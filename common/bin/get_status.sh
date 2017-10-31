@@ -7,6 +7,8 @@
 #   AUTHOR: REMI MONTROTY                                   Jan, 01  2013     #
 #                                                                             #
 #   VERSION :								      #
+#	* v4.0b1: 20171030						      # 
+#		- Add: ecfportal01 with ens32 as eth
 #	* v3.3b2: 20170222						      # 
 #		- Add: CSRTBI02
 #	* v3.3b1-rev2: 20151117					      # 
@@ -56,6 +58,8 @@ case $HOSTNAME in
 		interface=eth0:0;;
 	CSIGAS|CSOGAS)		
 		interface=eth0;;
+	ecfportal*)		
+		interface=ens32;;
 
 	*)
 		interface=eth0;;
@@ -70,7 +74,7 @@ IPR=`/sbin/ip addr |grep "global $interface"|awk '{print $2}'|sed "s:/.*::g"`
 if [ -z "$IPV1" ] && [ -z "$IPV2" ]; then
 	IP=$IPR
 	case $IPR in 
-		10.0.15.221|192.168.202.2|10.0.15.217)
+		10.0.15.221|192.168.202.2|10.0.15.217|10.0.15.189)
 			status="OPER" 
 			;;
 		172.19.22.15|172.19.22.16)
