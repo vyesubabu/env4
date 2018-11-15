@@ -7,6 +7,8 @@
 #   AUTHOR: REMI MONTROTY                                   Jan, 01  2017     #
 #                                                                             #
 #   VERSION :								      #
+#	* v1.0.2: 20171120						      # 
+#		- Add: ecfnode03 (on compute06 of miniHPC Indo)
 #	* v1.0.1: 20171005						      # 
 #		- Add: ecfnode02
 #	* v1.0.0: 20171004						      # 
@@ -84,6 +86,7 @@ esac
 ClusterFiles="/etc/slurm/slurm.conf /etc/hosts /etc/munge/munge.key"
 
 ClusterNodes="ecfnode01 ecfnode02"
+ClusterNodes="ecfnode01 ecfnode02 ecfnode03"
 ClusterTarsDir=/root/ClusterTARS
 
 NOW=`date -u +%Y%m%d%H%M` 
